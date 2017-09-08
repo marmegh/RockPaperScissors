@@ -1,0 +1,14 @@
+body {
+
+}
+
+h4.scoreboardTitle {
+  display: inline;
+  color: white;
+  margin-right: 200px;
+}
+
+input.playerBtn {
+  margin-right: 50px;
+  margin-left: 200px;
+}

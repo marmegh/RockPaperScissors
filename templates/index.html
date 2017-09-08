@@ -1,27 +1,62 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Rock Paper Scissors</title>
-    <style media="screen">
-    </style>
-    <link rel="stylesheet"
-    8href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cerulean/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Styling -->
+    <link href="./main.css" rel="stylesheet" />
   </head>
+
   <body>
-    <h4>Wins: {{wins}}</h4>
-    <h4>Losses: {{losses}}</h4>
-    <h4>Ties: {{ties}}</h4>
-    <div class = "container">
-      <h1>Rock Paper Scissors</h1>
-      {%if plays > 0%}
-      <p> The computer picked {{computer}} and you picked {{user}}, you {{result}}!<p>
-      {%endif%}
-      <form class="row" action="/process_play" method="post">
-        <input type="submit" name="user_choice" value="rock">
-        <input type="submit" name="user_choice" value="paper">
-        <input type="submit" name="user_choice" value="scissors">
-        </form>
-    </div>
+    <main class="container-fluid">
+      <section class="row">
+        <aside class="col-md-12 navbar navbar-default" id="scoreboard">
+          <h4 class="scoreboardTitle navbar-brand">
+            Wins: {{wins}}
+          </h4>
+          <h4 class="scoreboardTitle navbar-brand">
+            Losses: {{losses}}
+          </h4>
+          <h4 class="scoreboardTitle navbar-brand">
+            Ties: {{ties}}
+          </h4>
+        </aside>
+      </section>
+
+      <section class="row">
+        <article class="col-md-12">
+          <h1 class="text-center">
+            Rock Paper Scissors
+          </h1>
+          {%if plays > 0%}
+          <p>
+            The computer picked {{computer}} and you picked {{user}}, you {{result}}!
+          </p>
+          {%endif%}
+        </article>
+      </section>
+
+      <section class="row">
+        <article class="col-md-12">
+          <form action="/process-play" method="post" id="playerInputForm">
+            <input type="submit" class="btn btn-primary btn-lg playerBtn" name="user_choice" value="rock" />
+            <input type="submit" class="btn btn-primary btn-lg playerBtn" name="user_choice" value="paper" />
+            <input type="submit" class="btn btn-primary btn-lg playerBtn" name="user_choice" value="scissors" />
+          </form>
+        </article>
+      </section>
+    </main>
+
+    <!-- Bootstrap scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
   </body>
 </html>
