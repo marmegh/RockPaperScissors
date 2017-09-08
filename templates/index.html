@@ -17,13 +17,11 @@
       {%if plays > 0%}
       <p> The computer picked {{computer}} and you picked {{user}}, you {{result}}!<p>
       {%endif%}
-      <div class = "row">
-        <form action="/process_play" method="post">
-          <button type="button" name="rock">Rock</button>
-          <button type="button" name="paper">Paper</button>
-          <button type="button" name="scissors">Scissors</button>
+      <form class="row" action="/process_play" method="post">
+        <input type="submit" name="rock" value="rock">
+        <input type="submit" name="paper" value="paper">
+        <input type="submit" name="scissors" value="scissors">
         </form>
-      </div>
     </div>
   </body>
 </html>
