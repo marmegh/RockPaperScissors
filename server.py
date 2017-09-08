@@ -7,8 +7,10 @@ def index():
     session['losses'] = 0
     session['ties'] = 0
     session['plays'] = 0
+    session['result'] = 'none'
     return render_template('index.html', wins = session['wins'], losses = session['losses'], ties = session['ties'], plays = session['plays'])
 @app.route('/process_play', methods=['POST'])
 def process_play():
-    return render_template('index.html')
+    print "Got Post Data"
+    return render_template('index.html', wins = session['wins'], losses = session['losses'], ties = session['ties'], plays = session['plays'])
 app.run(debug=True)
